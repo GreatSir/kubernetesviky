@@ -1,0 +1,15 @@
+kind:               PersistentVolume
+apiVersion:         v1
+metadata:
+  name:             nfs-webserver2
+  labels:
+    type:           local
+spec:
+  storageClassName: manual
+  capacity:
+    storage:        10Gi
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    server: 172.18.82.25
+    path: /var/nfs
